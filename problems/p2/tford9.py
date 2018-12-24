@@ -12,7 +12,6 @@ def main():
 	result = 0
 	for n in range(3,100,3):
 	    f_n = cf_fibonnaci(n);
-	    print(f_n)
 	    if (f_n < N):
 	        result += f_n;
 	    else:
