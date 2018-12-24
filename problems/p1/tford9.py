@@ -1,15 +1,27 @@
-import math as m;
-import numpy as np;
+#!/usr/bin/env python
+# coding: utf-8
 
-x = 3;
-y = 5;
+import math as m numpy as np;
 
-n = 10;
+x = 3; y = 5; n = 1000;
 
-upper_bound_x_multiplier = m.floor(x/n);
-upper_bound_y_multiplier = m.floor(y/n);
+upper_bound_x_multiplier, x_multiplier_remainder  = divmod(n,x);
+upper_bound_y_multiplier, y_multiplier_remainder = divmod(n,y);
+upper_bound_xy_multiplier, xy_multiplier_remainder = divmod(n,(x*y));
 
-x_multiples = [];
-y_multiples = [];
+if not x_multiplier_remainder:
+    upper_bound_x_multiplier = upper_bound_x_multiplier - 1;
+if not y_multiplier_remainder:
+    upper_bound_y_multiplier = upper_bound_y_multiplier - 1;
+if not xy_multiplier_remainder:
+    upper_bound_xy_multiplier = upper_bound_xy_multiplier - 1;
 
-for i in range(upper_bound_x_multiplier):
+result = sum ([ x*(idx) for idx in range(upper_bound_x_multiplier+1) ]);
+result += sum ([ y*(idx) for idx in range(upper_bound_y_multiplier+1) ]);
+result -= sum ([ x*y*(idx) for idx in range(upper_bound_xy_multiplier+1) ]);
+
+print(result);
+
+
+
+
