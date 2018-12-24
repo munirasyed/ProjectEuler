@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import math as m numpy as np;
+import math as m, numpy as np;
 
 x = 3; y = 5; n = 1000;
 
